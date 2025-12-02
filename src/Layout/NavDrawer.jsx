@@ -26,7 +26,7 @@ const NavDrawer = ({ navDrawerOpen, toggleNavDrawer, menuLinks }) => {
       slotProps={{
         paper: {
           sx: {
-            width: { xs: "75%", sm: "50%", md: "35%" },
+            width: { xs: "75%" },
             backgroundColor: "#14213D",
             color: "white",
             p: 2,

@@ -1,9 +1,17 @@
-import { Badge, Box, Button, IconButton, Typography } from "@mui/material";
+import {
+  Badge,
+  Box,
+  Button,
+  IconButton,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 import { PersonOutline, ShoppingCartOutlined } from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Searchbar from "./Searchbar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CartDrawer from "../../Layout/CartDrawer";
 import NavDrawer from "../../Layout/NavDrawer";
 
@@ -13,6 +21,15 @@ const Navbar = () => {
 
   const toggleCartDrawer = () => setCartOpen(!cartOpen);
   const toggleNavDrawer = () => setNavDrawerOpen(!navDrawerOpen);
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  useEffect(() => {
+    if (!isMobile && navDrawerOpen) {
+      setNavDrawerOpen(false);
+    }
+  }, [isMobile, navDrawerOpen]);
 
   const menuLinks = [
     { path: "/collection/all?gender=Men", label: "Men" },
