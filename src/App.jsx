@@ -1,6 +1,20 @@
 import { GlobalStyles } from "@mui/material";
-import Header from "./components/common/Header";
 import UserLayout from "./Layout/UserLayout";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./Pages/Home";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <UserLayout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+    ],
+  },
+]);
 
 const App = () => {
   return (
@@ -12,7 +26,7 @@ const App = () => {
           "#root": { margin: 0, padding: 0 },
         }}
       />
-      <UserLayout />
+      <RouterProvider router={router} />
     </>
   );
 };

@@ -22,8 +22,6 @@ const Footer = () => {
         color: "grey.400",
         py: 8,
         width: "100%",
-        position: "fixed",
-        bottom: "0",
       }}
     >
       <Grid

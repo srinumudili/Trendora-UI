@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/common/Header";
 import Footer from "../components/Common/Footer";
 import { Box } from "@mui/material";
+import { Outlet } from "react-router-dom";
 
 const UserLayout = () => {
   return (
@@ -14,7 +15,9 @@ const UserLayout = () => {
     >
       <Header />
       {/* Main Content */}
-      <Box sx={{ flexGrow: 1, pt: "64px" }}></Box>
+      <Box component="main" sx={{ flexGrow: 1, pt: "64px" }}>
+        <Outlet />
+      </Box>
 
       <Footer />
     </Box>
