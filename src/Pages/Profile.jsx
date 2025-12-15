@@ -59,7 +59,7 @@ const Profile = () => {
       {/* Sidebar */}
       <Paper
         sx={{
-          width: { xs: "100%", md: 300 },
+          width: { md: 300 },
           p: 4,
           borderRadius: 3,
           height: "fit-content",

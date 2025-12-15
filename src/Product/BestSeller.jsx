@@ -14,14 +14,17 @@ const BestSeller = () => {
         borderRadius: 4,
         bgcolor: "grey.50",
         boxShadow: 4,
-        textAlign: "center",
       }}
     >
-      <Typography variant="h4" fontWeight={800} sx={{ mb: 2 }}>
+      <Typography
+        variant="h4"
+        fontWeight={800}
+        sx={{ mb: 2, textAlign: "center" }}
+      >
         <StarIcon sx={{ color: "warning.main", mr: 1 }} />
         Best Seller
       </Typography>
-      <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
+      <Box>
         <ProductDetails />
       </Box>
     </Box>

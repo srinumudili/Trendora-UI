@@ -1,8 +1,14 @@
 import { Close } from "@mui/icons-material";
 import { Box, Button, Drawer, IconButton, Typography } from "@mui/material";
 import CartContent from "../components/Cart/CartContent";
+import { useNavigate } from "react-router-dom";
 
 const CartDrawer = ({ cartOpen, toggleCartDrawer }) => {
+  const navigate = useNavigate();
+  const handleCheckout = () => {
+    toggleCartDrawer();
+    navigate("/checkout");
+  };
   return (
     <Drawer
       anchor="right"
@@ -71,6 +77,7 @@ const CartDrawer = ({ cartOpen, toggleCartDrawer }) => {
             backgroundColor: "#2563EB",
             "&:hover": { backgroundColor: "#1D4ED8" },
           }}
+          onClick={handleCheckout}
         >
           Proceed to Checkout
         </Button>

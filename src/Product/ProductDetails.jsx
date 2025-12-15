@@ -61,6 +61,7 @@ const ProductDetails = ({ product = dummyProduct }) => {
     <Box
       sx={{
         maxWidth: "1200px",
+        my: 6,
         mx: "auto",
         p: 4,
       }}
@@ -163,11 +164,13 @@ const ProductDetails = ({ product = dummyProduct }) => {
           </Typography>
 
           {/* Colors */}
-          <Box sx={{ mb: 3 }}>
+          <Box
+            sx={{
+              mb: 3,
+            }}
+          >
             <Typography fontWeight={600}>Color:</Typography>
-            <Box
-              sx={{ display: "flex", justifyContent: "center", gap: 1, mt: 1 }}
-            >
+            <Box sx={{ display: "flex", gap: 1, mt: 1 }}>
               {product.colors.map((color) => (
                 <Box
                   key={color}
@@ -191,9 +194,7 @@ const ProductDetails = ({ product = dummyProduct }) => {
           {/* Sizes */}
           <Box sx={{ mb: 3 }}>
             <Typography fontWeight={600}>Size:</Typography>
-            <Box
-              sx={{ display: "flex", justifyContent: "center", gap: 1, mt: 1 }}
-            >
+            <Box sx={{ display: "flex", gap: 1, mt: 1 }}>
               {product.sizes.map((size) => (
                 <Chip
                   key={size}
@@ -216,8 +217,6 @@ const ProductDetails = ({ product = dummyProduct }) => {
             <Box
               sx={{
                 display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
                 mt: 1,
               }}
             >
@@ -227,7 +226,11 @@ const ProductDetails = ({ product = dummyProduct }) => {
                 <RemoveIcon />
               </IconButton>
 
-              <Typography fontSize="1.2rem" fontWeight={700} sx={{ mx: 2 }}>
+              <Typography
+                fontSize="1.2rem"
+                fontWeight={700}
+                sx={{ mx: 2, py: 1 }}
+              >
                 {quantity}
               </Typography>
 
