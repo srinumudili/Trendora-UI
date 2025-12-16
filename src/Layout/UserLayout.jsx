@@ -1,12 +1,10 @@
 import React from "react";
 import Header from "../components/common/Header";
 import Footer from "../components/Common/Footer";
-import { Box } from "@mui/material";
-import { Outlet, useLocation } from "react-router-dom";
+import { Box, Toolbar } from "@mui/material";
+import { Outlet } from "react-router-dom";
 
 const UserLayout = () => {
-  const location = useLocation();
-  const isHome = location.pathname === "/";
   return (
     <Box
       sx={{
@@ -16,8 +14,9 @@ const UserLayout = () => {
       }}
     >
       <Header />
+      <Toolbar />
       {/* Main Content */}
-      <Box component="main" sx={{ flexGrow: 1, pt: isHome ? "64px" : 0 }}>
+      <Box component="main" sx={{ flexGrow: 1 }}>
         <Outlet />
       </Box>
 

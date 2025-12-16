@@ -49,9 +49,7 @@ const Checkout = () => {
     setShipping({ ...shipping, [e.target.name]: e.target.value });
   };
   return (
-    <Box
-      sx={{ maxWidth: 1300, mx: "auto", my: 6, px: 2, py: { xs: 3, md: 6 } }}
-    >
+    <Box sx={{ maxWidth: 1300, mx: "auto", px: 2, py: { xs: 3, md: 6 } }}>
       <Grid container spacing={4}>
         {/* Left: Shipping */}
         <Grid size={{ xs: 12, md: 7 }}>

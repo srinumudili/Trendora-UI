@@ -127,7 +127,7 @@ const Collection = () => {
     <Box
       display="flex"
       flexDirection={{ xs: "column", lg: "row" }}
-      mt={10}
+      mt={4}
       minHeight="100vh"
     >
       {/* Mobile Filter Button */}
