@@ -11,6 +11,7 @@ import Checkout from "./components/Cart/Checkout";
 import OrderConfirmation from "./Pages/OrderConfirmation";
 import OrderDetails from "./Pages/OrderDetails";
 import MyOrders from "./Pages/MyOrders";
+import AdminLayout from "./Layout/AdminLayout";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
         element: <MyOrders />,
       },
     ],
+  },
+  {
+    path: "/admin",
+    element: <AdminLayout />,
   },
 ]);
 
