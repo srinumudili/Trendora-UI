@@ -11,6 +11,7 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Toolbar,
   Typography,
 } from "@mui/material";
 import { Link, NavLink, useNavigate } from "react-router-dom";
@@ -39,9 +40,9 @@ const AdminSidebar = () => {
         display: "flex",
         flexDirection: "column",
         p: 2,
-        my: 6,
       }}
     >
+      <Toolbar />
       {/* BRAND */}
       <Typography
         component={Link}

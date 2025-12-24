@@ -90,6 +90,7 @@ const AdminLayout = () => {
           flexGrow: 1,
           p: { xs: 2, md: 4 },
           mt: 8,
+          ml: { md: `${DRAWER_WIDTH}px` },
         }}
       >
         <Outlet />
