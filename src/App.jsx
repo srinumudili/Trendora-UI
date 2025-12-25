@@ -13,6 +13,8 @@ import OrderDetails from "./Pages/OrderDetails";
 import MyOrders from "./Pages/MyOrders";
 import AdminLayout from "./Layout/AdminLayout";
 import UserManagement from "./components/Admin/UserManagement";
+import ProductManagement from "./components/Admin/ProductManagement";
+import OrderManagement from "./components/Admin/OrderManagement";
 
 const router = createBrowserRouter([
   {
@@ -68,6 +70,14 @@ const router = createBrowserRouter([
       {
         path: "users",
         element: <UserManagement />,
+      },
+      {
+        path: "products",
+        element: <ProductManagement />,
+      },
+      {
+        path: "orders",
+        element: <OrderManagement />,
       },
     ],
   },

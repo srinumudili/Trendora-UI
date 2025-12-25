@@ -20,18 +20,28 @@ const AdminSidebar = () => {
   const handleLogout = () => {
     navigate("/");
   };
-  const navStyle = ({ isActive }) => ({
-    borderRadius: 2,
-    mx: 1,
-    mb: 1,
-    px: 2,
-    py: 1.2,
-    bgcolor: isActive ? "primary.main" : "transparent",
-    color: isActive ? "primary.contrastText" : "text.secondary",
-    "&:hover": {
-      bgcolor: isActive ? "primary.dark" : "action.hover",
+
+  const menu = [
+    { id: "users", label: "Users", path: "/admin/users", icon: <PeopleIcon /> },
+    {
+      id: "products",
+      label: "Products",
+      path: "/admin/products",
+      icon: <Inventory2Icon />,
     },
-  });
+    {
+      id: "orders",
+      label: "Orders",
+      path: "/admin/orders",
+      icon: <ReceiptLongIcon />,
+    },
+    {
+      id: "shop",
+      label: "Go to Store",
+      path: "/",
+      icon: <StorefrontIcon />,
+    },
+  ];
 
   return (
     <Box
@@ -66,33 +76,32 @@ const AdminSidebar = () => {
 
       {/* NAVIGATION */}
       <List disablePadding>
-        <ListItemButton component={NavLink} to="/admin/users" sx={navStyle}>
-          <ListItemIcon sx={{ color: "inherit" }}>
-            <PeopleIcon />
-          </ListItemIcon>
-          <ListItemText primary="Users" />
-        </ListItemButton>
-
-        <ListItemButton component={NavLink} to="/admin/products" sx={navStyle}>
-          <ListItemIcon sx={{ color: "inherit" }}>
-            <Inventory2Icon />
-          </ListItemIcon>
-          <ListItemText primary="Products" />
-        </ListItemButton>
-
-        <ListItemButton component={NavLink} to="/admin/orders" sx={navStyle}>
-          <ListItemIcon sx={{ color: "inherit" }}>
-            <ReceiptLongIcon />
-          </ListItemIcon>
-          <ListItemText primary="Orders" />
-        </ListItemButton>
-
-        <ListItemButton component={NavLink} to="/" sx={navStyle}>
-          <ListItemIcon sx={{ color: "inherit" }}>
-            <StorefrontIcon />
-          </ListItemIcon>
-          <ListItemText primary="Go to Store" />
-        </ListItemButton>
+        {menu.map((item) => (
+          <ListItemButton
+            key={item.id}
+            component={NavLink}
+            to={item.path}
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+            sx={{
+              borderRadius: 2,
+              mx: 1,
+              mb: 1,
+              px: 2,
+              py: 1.2,
+              color: "text.secondary",
+              "&.active-link": {
+                bgcolor: "primary.main",
+                color: "primary.contrastText",
+                "&:hover": {
+                  bgcolor: "primary.dark",
+                },
+              },
+            }}
+          >
+            <ListItemIcon sx={{ color: "inherit" }}>{item.icon}</ListItemIcon>
+            <ListItemText primary={item.label} />
+          </ListItemButton>
+        ))}
       </List>
 
       <Box sx={{ flexGrow: 1 }} />
