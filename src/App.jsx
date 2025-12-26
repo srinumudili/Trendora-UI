@@ -15,6 +15,7 @@ import AdminLayout from "./Layout/AdminLayout";
 import UserManagement from "./components/Admin/UserManagement";
 import ProductManagement from "./components/Admin/ProductManagement";
 import OrderManagement from "./components/Admin/OrderManagement";
+import AdminHome from "./components/Admin/AdminHome";
 
 const router = createBrowserRouter([
   {
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
     path: "/admin",
     element: <AdminLayout />,
     children: [
+      {
+        index: true,
+        element: <AdminHome />,
+      },
       {
         path: "users",
         element: <UserManagement />,
