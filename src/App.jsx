@@ -16,6 +16,7 @@ import UserManagement from "./components/Admin/UserManagement";
 import ProductManagement from "./components/Admin/ProductManagement";
 import OrderManagement from "./components/Admin/OrderManagement";
 import AdminHome from "./components/Admin/AdminHome";
+import EditProduct from "./components/Admin/EditProduct";
 
 const router = createBrowserRouter([
   {
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
       {
         path: "products",
         element: <ProductManagement />,
+      },
+      {
+        path: "products/:id/edit",
+        element: <EditProduct />,
       },
       {
         path: "orders",
